@@ -32,6 +32,13 @@
   margin-right: 5px;
 }
 
+.moment-post {
+  margin: 10px 10px;
+  font-size: 14px;
+  font-weight: 100;
+  color: #999;
+}
+
 .add-comment {
   display: flex;
 }

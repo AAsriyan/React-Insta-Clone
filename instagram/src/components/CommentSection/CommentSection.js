@@ -1,9 +1,10 @@
 import React from "react";
+import AddComment from "./AddComment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 import PropTypes from "prop-types";
 import "./CommentSection.css";
-import AddComment from "./AddComment";
+var moment = require("moment");
 
 const CommentSection = props => {
   return (
@@ -13,14 +14,21 @@ const CommentSection = props => {
         <FontAwesomeIcon className="comment" icon={faComment} />
       </div>
       <h3>{props.data.likes} likes</h3>
-      {props.data.comments.map(comment => {
-        return (
-          <div className="comment-post" key={comment.username}>
-            <h2>{comment.username}: </h2>
-            <p>{comment.text}</p>
-          </div>
-        );
-      })}
+      <div>
+        {props.data.comments.map(comment => {
+          return (
+            <div className="comment-post" key={comment.username}>
+              <h2>{comment.username}: </h2>
+              <p>{comment.text}</p>
+            </div>
+          );
+        })}
+        <div className="moment-post">
+          {moment()
+            .startOf("hour")
+            .fromNow()}
+        </div>
+      </div>
       <AddComment />
     </div>
   );
