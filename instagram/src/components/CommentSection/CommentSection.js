@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 import PropTypes from "prop-types";
 import "./CommentSection.css";
+import AddComment from "./AddComment";
 
 const CommentSection = props => {
   return (
@@ -20,6 +21,7 @@ const CommentSection = props => {
           </div>
         );
       })}
+      <AddComment />
     </div>
   );
 };
