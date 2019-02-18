@@ -1,0 +1,28 @@
+.post-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 20px 0;
+  border: 1px solid lightgray;
+}
+
+.post-header {
+  display: flex;
+  justify-content: baseline;
+  align-items: baseline;
+  margin: 10px;
+}
+
+.profile-pic {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.username-post {
+  font-weight: bold;
+  margin: 0px;
+}
+
+.post-pic {
+  max-width: 600px;
+  width: 100%;
+}
