@@ -26,4 +26,16 @@ const CommentSection = props => {
   );
 };
 
+CommentSection.propTypes = {
+  data: PropTypes.shape({
+    likes: PropTypes.number.isRequired,
+    comments: PropTypes.arrayOf(
+      PropTypes.shape({
+        username: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired
+      })
+    )
+  })
+};
+
 export default CommentSection;
