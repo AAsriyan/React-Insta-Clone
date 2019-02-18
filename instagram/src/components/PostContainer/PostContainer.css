@@ -1,18 +1,19 @@
 .post-container {
   max-width: 600px;
   width: 100%;
-  margin: 20px 0;
+  margin: 20px auto;
   border: 1px solid lightgray;
 }
 
 .post-header {
   display: flex;
   justify-content: baseline;
-  align-items: baseline;
+  align-items: center;
   margin: 10px;
 }
 
 .profile-pic {
+  margin: 5px;
   width: 30px;
   border-radius: 50%;
 }

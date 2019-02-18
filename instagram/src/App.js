@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import dummyData from "./dummy-data";
 import PostContainer from "./components/PostContainer/PostContainer";
+import SearchBar from "./components/SearchBar/SearchBar";
 import "./App.css";
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>This Works</h1>
+        <SearchBar />
         {this.state.data.map(data => (
           <PostContainer data={data} key={data.username} />
         ))}
