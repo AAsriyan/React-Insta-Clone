@@ -17,7 +17,7 @@ const CommentSection = props => {
       <div>
         {props.data.comments.map(comment => {
           return (
-            <div className="comment-post" key={comment.username}>
+            <div className="comment-post" key={comment.commentId}>
               <h2>{comment.username}: </h2>
               <p>{comment.text}</p>
             </div>
@@ -40,7 +40,8 @@ CommentSection.propTypes = {
     comments: PropTypes.arrayOf(
       PropTypes.shape({
         username: PropTypes.string.isRequired,
-        text: PropTypes.string.isRequired
+        text: PropTypes.string.isRequired,
+        commentId: PropTypes.number.isRequired
       })
     )
   })

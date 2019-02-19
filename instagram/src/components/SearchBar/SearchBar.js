@@ -6,7 +6,6 @@ import {
   faCompass,
   faUser
 } from "@fortawesome/free-regular-svg-icons";
-import PropTypes from "prop-types";
 import "./SearchBar.css";
 
 const SearchBar = () => {
