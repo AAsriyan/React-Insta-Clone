@@ -27,14 +27,6 @@ class CommentSection extends React.Component {
     this.setState({ comments: [...this.state.comments, newComment] });
     this.setState({ copyComments, comment: "" });
   };
-  // Lame Solution code
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   const newComment = { text: this.state.comment, username: "admin" };
-  //   const comments = this.state.comments.slice();
-  //   comments.push(newComment);
-  //   this.setState({ comments, comment: "" });
-  // };
 
   render() {
     return (

@@ -10,21 +10,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      text:
-        "just put this in here to shut react up because it wants me to refactor this into a functional component"
+      text: ""
     };
   }
-
-  // Old search function, keeping it as reference
-  // searchHandler = e => {
-  //   const posts = this.state.data.filter(post => {
-  //     if (post.username.includes(e.target.value)) {
-  //       return post;
-  //     }
-  //     return null;
-  //   });
-  //   this.setState({ searchPosts: posts });
-  // };
 
   render() {
     return (

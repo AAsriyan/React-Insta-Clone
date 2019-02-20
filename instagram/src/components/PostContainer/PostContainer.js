@@ -5,6 +5,7 @@ import "./PostContainer.css";
 class PostContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
   render() {
     let filteredPosts = this.props.data.filter(post => {
