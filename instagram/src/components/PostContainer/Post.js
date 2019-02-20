@@ -16,7 +16,6 @@ class Post extends React.Component {
   addLike = e => {
     e.preventDefault();
     const addLike = this.state.likes + 1;
-    //let counterPlus = copyLikes + 1;
     this.setState({ likes: addLike });
   };
 

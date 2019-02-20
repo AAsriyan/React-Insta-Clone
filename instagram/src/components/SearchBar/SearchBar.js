@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = props => {
   return (
     <div className="header">
       <div className="logo-header">
@@ -16,7 +16,12 @@ const SearchBar = () => {
         <h1>Instagram</h1>
       </div>
       <div className="search">
-        <input type="text" placeholder="Search" name="search" />
+        <input
+          type="text"
+          placeholder="Search"
+          name="search"
+          onKeyDown={props.searchHandler}
+        />
       </div>
       <div className="profile-icons">
         <FontAwesomeIcon icon={faCompass} />
