@@ -36,14 +36,17 @@
 
 .comment-icons {
   margin: 5px 10px;
+  display: flex;
 }
 
 .heart {
   margin: 5px;
   font-size: 25px;
+  cursor: pointer;
 }
 
 .comment {
   margin: 5px;
   font-size: 25px;
+  cursor: pointer;
 }

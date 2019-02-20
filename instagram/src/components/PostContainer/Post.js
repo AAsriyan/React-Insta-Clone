@@ -12,6 +12,14 @@ class Post extends React.Component {
       likes: props.post.likes
     };
   }
+
+  addLike = e => {
+    e.preventDefault();
+    const addLike = this.state.likes + 1;
+    //let counterPlus = copyLikes + 1;
+    this.setState({ likes: addLike });
+  };
+
   render() {
     return (
       <div className="post-container">
@@ -26,7 +34,7 @@ class Post extends React.Component {
             alt="post thumbnail"
           />
         </div>
-        <LikeSection likes={this.state.likes} />
+        <LikeSection likes={this.state.likes} addLike={this.addLike} />
         <CommentSection
           comments={this.props.post.comments}
           postId={this.props.post.imageUrl}

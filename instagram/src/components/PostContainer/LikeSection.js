@@ -7,8 +7,12 @@ const LikeSection = props => {
   return (
     <div className="like-section">
       <div className="comment-icons">
-        <FontAwesomeIcon className="heart" icon={faHeart} />
-        <FontAwesomeIcon className="comment" icon={faComment} />
+        <div onClick={props.addLike}>
+          <FontAwesomeIcon className="heart" icon={faHeart} />
+        </div>
+        <div>
+          <FontAwesomeIcon className="comment" icon={faComment} />
+        </div>
       </div>
       <h3 className="likes">{props.likes} likes</h3>
     </div>

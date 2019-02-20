@@ -13,6 +13,7 @@ const CommentInput = props => {
           value={props.comment}
           placeholder="Add comment... "
           onChange={props.changeComment}
+          required
         />
       </form>
       <FontAwesomeIcon className="input-icon" icon={faEllipsisH} />
