@@ -20,7 +20,9 @@ const SearchBar = props => {
           type="text"
           placeholder="Search"
           name="search"
-          onKeyDown={props.searchHandler}
+          value={props.search}
+          //onKeyDown={props.searchHandler}
+          onChange={props.updateSearch}
         />
       </div>
       <div className="profile-icons">

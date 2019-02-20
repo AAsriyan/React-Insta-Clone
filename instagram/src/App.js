@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       data: [],
-      searchPosts: []
+      searchPosts: [],
+      search: ""
     };
   }
 
@@ -17,20 +18,35 @@ class App extends Component {
     this.setState({ data: dummyData });
   }
 
-  searchHandler = e => {
-    console.log(e.target);
-    const posts = this.state.data.filter(post => {
-      if (post.username.includes(e.target.value)) {
-        return post;
-      }
-    });
-    this.setState({ searchPosts: posts });
+  updateSearch = e => {
+    this.setState({ search: e.target.value });
   };
 
+  // searchHandler = e => {
+  //   const posts = this.state.data.filter(post => {
+  //     if (post.username.includes(e.target.value)) {
+  //       return post;
+  //     }
+  //     return null;
+  //   });
+  //   this.setState({ searchPosts: posts });
+  // };
+
   render() {
+    let filteredSearch = this.state.data
+      .map(post => {
+        return <div post={post} />;
+      })
+      .filter(post => {
+        return post.username.indexOf(this.state.search) !== -1;
+      });
     return (
       <div className="App">
-        <SearchBar searchHandler={this.searchHandler} />
+        <SearchBar
+          search={this.state.search}
+          searchHandler={this.searchHandler}
+          updateSearch={this.updateSearch}
+        />
         <PostContainer
           data={
             this.state.searchPosts.length <= 0
