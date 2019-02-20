@@ -8,17 +8,19 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: dummyData
+      data: []
     };
+  }
+
+  componentDidMount() {
+    this.setState({ data: dummyData });
   }
 
   render() {
     return (
       <div className="App">
         <SearchBar />
-        {this.state.data.map(data => (
-          <PostContainer data={data} key={data.username} />
-        ))}
+        <PostContainer data={this.state.data} />
       </div>
     );
   }
