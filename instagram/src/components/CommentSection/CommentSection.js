@@ -19,7 +19,10 @@ class CommentSection extends React.Component {
   // My adding function
   handleSubmit = e => {
     e.preventDefault();
-    const newComment = { text: this.state.comment, username: "admin" };
+    const newComment = {
+      text: this.state.comment,
+      username: localStorage.getItem("user")
+    };
     const copyComments = this.state.comments;
     this.setState({ comments: [...this.state.comments, newComment] });
     this.setState({ copyComments, comment: "" });

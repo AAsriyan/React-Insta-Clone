@@ -1,27 +1,21 @@
 import React, { Component } from "react";
-import dummyData from "./dummy-data";
 import PostPage from "./components/PostContainer/PostPage";
+import authenticate from "./components/authenticate/authenticate";
+import Login from "./components/Login/Login";
 import "./App.css";
+
+//Authenticate(<App />);
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: [],
-      searchPosts: [],
-      search: ""
+      text:
+        "just put this in here to shut react up because it wants me to refactor this into a functional component"
     };
   }
 
-  componentDidMount() {
-    this.setState({ data: dummyData });
-  }
-
-  updateSearch = e => {
-    this.setState({ search: e.target.value });
-  };
-
-  // Old serach function, keeping it as reference
+  // Old search function, keeping it as reference
   // searchHandler = e => {
   //   const posts = this.state.data.filter(post => {
   //     if (post.username.includes(e.target.value)) {
@@ -35,15 +29,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PostPage
-          search={this.state.search}
-          searchHandler={this.searchHandler}
-          updateSearch={this.updateSearch}
-          data={this.state.data}
-        />
+        <PostPage />
       </div>
     );
   }
 }
 
-export default App;
+export default authenticate(App)(Login);
