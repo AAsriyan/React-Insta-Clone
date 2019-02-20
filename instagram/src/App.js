@@ -33,13 +33,6 @@ class App extends Component {
   // };
 
   render() {
-    let filteredSearch = this.state.data
-      .map(post => {
-        return <div post={post} />;
-      })
-      .filter(post => {
-        return post.username.indexOf(this.state.search) !== -1;
-      });
     return (
       <div className="App">
         <SearchBar
@@ -48,11 +41,13 @@ class App extends Component {
           updateSearch={this.updateSearch}
         />
         <PostContainer
-          data={
-            this.state.searchPosts.length <= 0
-              ? this.state.data
-              : this.state.searchPosts
-          }
+          // data={
+          //   this.state.searchPosts.length <= 0
+          //     ? this.state.data
+          //     : this.state.searchPosts
+          // }
+          data={this.state.data}
+          search={this.state.search}
         />
       </div>
     );
