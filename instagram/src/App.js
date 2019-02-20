@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import dummyData from "./dummy-data";
-import PostContainer from "./components/PostContainer/PostContainer";
-import SearchBar from "./components/SearchBar/SearchBar";
+import PostPage from "./components/PostContainer/PostPage";
 import "./App.css";
 
 class App extends Component {
@@ -22,6 +21,7 @@ class App extends Component {
     this.setState({ search: e.target.value });
   };
 
+  // Old serach function, keeping it as reference
   // searchHandler = e => {
   //   const posts = this.state.data.filter(post => {
   //     if (post.username.includes(e.target.value)) {
@@ -35,19 +35,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar
+        <PostPage
           search={this.state.search}
           searchHandler={this.searchHandler}
           updateSearch={this.updateSearch}
-        />
-        <PostContainer
-          // data={
-          //   this.state.searchPosts.length <= 0
-          //     ? this.state.data
-          //     : this.state.searchPosts
-          // }
           data={this.state.data}
-          search={this.state.search}
         />
       </div>
     );
