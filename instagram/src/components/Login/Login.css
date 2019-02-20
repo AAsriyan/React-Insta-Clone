@@ -10,12 +10,50 @@
   align-items: center;
 }
 
+.login-header h2 {
+  font-size: 50px;
+  font-family: "Billabong";
+  margin: 30px 0;
+}
+
+.login-form {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .username {
-  width: 200px;
-  height: 50px;
+  width: 250px;
+  height: 30px;
+  border-radius: 14px;
+  font-size: 18px;
+  color: green;
+  display: block;
+  margin: 20px;
+}
+
+.username:placeholder-shown {
+  font-size: 18px;
 }
 
 .password {
-  width: 200px;
-  height: 50px;
+  width: 250px;
+  height: 30px;
+  border-radius: 14px;
+  font-size: 18px;
+  color: green;
+  display: block;
+  margin: 20px;
+}
+.password:placeholder-shown {
+  font-size: 18px;
+}
+
+.login-form button {
+  margin: 0 20px;
+  width: 100px;
+  height: 30px;
+  border-radius: 14px;
+  font-size: 14px;
 }

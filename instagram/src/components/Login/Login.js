@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import "./Login.css";
 
@@ -20,7 +19,12 @@ export class Login extends Component {
   handleLogin = e => {
     localStorage.setItem("user", this.state.username);
     localStorage.setItem("password", this.state.password);
-    window.location.reload();
+  };
+
+  handleErrors = e => {
+    alert(
+      "Signing Up is not possible at this time. Please wait until I figure out how this stuff works ok?"
+    );
   };
 
   render() {
@@ -35,19 +39,22 @@ export class Login extends Component {
             className="username"
             type="text"
             name="username"
+            placeholder="Username"
             value={this.state.username}
             onChange={this.handleAllFormChanges}
             required
           />
           <input
-            className="username"
+            className="password"
             type="text"
             name="password"
+            placeholder="Password"
             value={this.state.password}
             onChange={this.handleAllFormChanges}
             required
           />
           <button onClick={this.handleLogin}>Login</button>
+          <button onClick={this.handleErrors}>Sign Up</button>
         </form>
       </div>
     );
