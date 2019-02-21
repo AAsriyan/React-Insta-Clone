@@ -2,6 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import Comment from "./Comment";
 import CommentInput from "./CommentInput";
+import styled from "styled-components";
+
+const CommentSect = styled.div`
+  max-width: 600px;
+  width: 100%;
+`;
 
 class CommentSection extends React.Component {
   constructor(props) {
@@ -30,7 +36,7 @@ class CommentSection extends React.Component {
 
   render() {
     return (
-      <div className="comment-section">
+      <CommentSect>
         {this.state.comments.map((c, i) => (
           <Comment key={i} comment={c} />
         ))}
@@ -39,7 +45,7 @@ class CommentSection extends React.Component {
           submitComment={this.handleSubmit}
           changeComment={this.handleChanges}
         />
-      </div>
+      </CommentSect>
     );
   }
 }
