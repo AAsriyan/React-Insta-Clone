@@ -3,7 +3,20 @@ import PropTypes from "prop-types";
 import CommentSection from "../CommentSection/CommentSection";
 import LikeSection from "./LikeSection";
 import PostHeader from "./PostHeader";
-import "./PostContainer.css";
+import styled from "styled-components";
+
+const PostContainer = styled.div`
+  max-width: 600px;
+  width: 100%;
+  margin: 20px auto;
+  border: 1px solid lightgray;
+  margin-bottom: 60px;
+`;
+
+const PostPic = styled.img`
+  max-width: 600px;
+  width: 100%;
+`;
 
 class Post extends React.Component {
   constructor(props) {
@@ -21,13 +34,13 @@ class Post extends React.Component {
 
   render() {
     return (
-      <div className="post-container">
+      <PostContainer>
         <PostHeader
           thumbnailUrl={this.props.post.thumbnailUrl}
           username={this.props.post.username}
         />
         <div>
-          <img
+          <PostPic
             className="post-pic"
             src={this.props.post.imageUrl}
             alt="post thumbnail"
@@ -38,7 +51,7 @@ class Post extends React.Component {
           comments={this.props.post.comments}
           postId={this.props.post.imageUrl}
         />
-      </div>
+      </PostContainer>
     );
   }
 }
