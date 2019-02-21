@@ -21,7 +21,7 @@ const SearchBar = props => {
           placeholder="Search"
           name="search"
           value={props.search}
-          //onKeyDown={props.searchHandler}
+          onKeyDown={props.searchHandler}
           onChange={props.updateSearch}
         />
       </div>
