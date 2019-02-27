@@ -4,8 +4,6 @@ import authenticate from "./components/authenticate/authenticate";
 import Login from "./components/Login/Login";
 import "./App.css";
 
-//Authenticate(<App />);
-
 class App extends Component {
   constructor() {
     super();

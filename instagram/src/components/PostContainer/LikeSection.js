@@ -1,21 +1,43 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
-import "./PostContainer.css";
+import styled from "styled-components";
+
+const CommentIcons = styled.div`
+  margin: 5px 10px;
+  display: flex;
+`;
+
+const Heart = styled.div`
+  margin: 5px;
+  font-size: 25px;
+  cursor: pointer;
+`;
+
+const Comment = styled.div`
+  margin: 5px;
+  font-size: 25px;
+  cursor: pointer;
+`;
+
+const Likes = styled.h3`
+  font-weight: bold;
+  margin: 5px 10px;
+`;
 
 const LikeSection = props => {
   return (
-    <div className="like-section">
-      <div className="comment-icons">
-        <div onClick={props.addLike}>
+    <>
+      <CommentIcons className="comment-icons">
+        <Heart onClick={props.addLike}>
           <FontAwesomeIcon className="heart" icon={faHeart} />
-        </div>
-        <div>
+        </Heart>
+        <Comment>
           <FontAwesomeIcon className="comment" icon={faComment} />
-        </div>
-      </div>
-      <h3 className="likes">{props.likes} likes</h3>
-    </div>
+        </Comment>
+      </CommentIcons>
+      <Likes>{props.likes} likes</Likes>
+    </>
   );
 };
 
